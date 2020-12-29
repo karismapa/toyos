@@ -4,7 +4,23 @@ import ShopData from './shop.data';
 
 import CollectionPreview from '../../components/collection-preview/collection-preview.component';
 
-class ShopPage extends React.Component {
+interface IProps {}
+
+interface IState {
+  collections: {
+    id: number,
+    title: string,
+    routeName: string,
+    items: {
+      id: number,
+      name: string,
+      imageUrl: string,
+      price: number,
+    }[],
+  }[]
+}
+
+class ShopPage extends React.Component<IProps, IState> {
   constructor(props) {
     super(props);
 
